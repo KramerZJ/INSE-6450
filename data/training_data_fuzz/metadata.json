@@ -1,0 +1,99 @@
+{
+  "label_schema": {
+    "labels": [
+      "file_access",
+      "network_access",
+      "process_mgmt",
+      "pure_calculation",
+      "code_execution"
+    ],
+    "num_labels": 5,
+    "merge_map": {
+      "file_read": "file_access",
+      "file_write": "file_access",
+      "dir_read": "file_access",
+      "dir_write": "file_access",
+      "network_send": "network_access",
+      "network_receive": "network_access",
+      "process_create": "process_mgmt",
+      "process_abort": "process_mgmt",
+      "process_sleep": "process_mgmt",
+      "calc_math": "pure_calculation",
+      "calc_data_mgmt": "pure_calculation",
+      "calc_encode_decode": "pure_calculation",
+      "code_execution": "code_execution"
+    }
+  },
+  "splits": {
+    "train": {
+      "count": 91915,
+      "distribution": {
+        "pure_calculation": 46915,
+        "code_execution": 35981,
+        "file_access": 14506,
+        "process_mgmt": 4633,
+        "network_access": 4618
+      },
+      "synthetic_count": 15834,
+      "oversampled_count": 560
+    },
+    "val": {
+      "count": 9509,
+      "distribution": {
+        "code_execution": 4455,
+        "pure_calculation": 3846,
+        "file_access": 1808,
+        "process_mgmt": 578,
+        "network_access": 507
+      }
+    },
+    "test": {
+      "count": 9509,
+      "distribution": {
+        "code_execution": 4461,
+        "pure_calculation": 3887,
+        "file_access": 1808,
+        "process_mgmt": 576,
+        "network_access": 514
+      }
+    }
+  },
+  "class_weights": {
+    "file_access": 4.0,
+    "network_access": 5.0,
+    "process_mgmt": 6.0,
+    "pure_calculation": 2.0,
+    "code_execution": 2.5
+  },
+  "class_weights_tensor_order": [
+    4.0,
+    5.0,
+    6.0,
+    2.0,
+    2.5
+  ],
+  "training_notes": {
+    "loss": "Binary Cross-Entropy (multi-label)",
+    "weight_usage": "Multiply each label's BCE loss by its class weight",
+    "input_mode": "syscall",
+    "input_field": "text (syscall sequence from 'syscalls' field, space-separated syscall names)",
+    "recommended_tokenizer": "syscall (word-level, one token per syscall name)",
+    "output_field": "label_vector (5-dim binary vector)",
+    "label_order": [
+      "file_access",
+      "network_access",
+      "process_mgmt",
+      "pure_calculation",
+      "code_execution"
+    ],
+    "threshold": "Use 0.5 for predictions, tune on val set",
+    "metrics": "Per-label F1 + macro F1 + exact match ratio"
+  },
+  "pytorch_example": {
+    "loss_setup": "weights = torch.tensor(class_weights_tensor_order)\ncriterion = nn.BCEWithLogitsLoss(pos_weight=weights)",
+    "prediction": "probs = torch.sigmoid(logits)\npreds = (probs > 0.5).int()"
+  },
+  "tensorflow_example": {
+    "loss_setup": "# In model.compile:\n# Use custom weighted BCE or sample_weight\nloss = tf.keras.losses.BinaryCrossentropy(from_logits=True)"
+  }
+}

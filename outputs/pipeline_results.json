@@ -1,0 +1,164 @@
+{
+  "generated_at": "2026-04-07T16:21:38.917814",
+  "model": {
+    "params": 368781,
+    "size_mb": 1.47,
+    "epoch": 18,
+    "best_val_f1": 0.977,
+    "architecture": "DualInputClassifier",
+    "checkpoint": "data/checkpoints/best_model.pt"
+  },
+  "dataset": {
+    "train": 91915,
+    "val": 9509,
+    "test": 9509,
+    "labels": [
+      "file_access",
+      "network_access",
+      "process_mgmt",
+      "pure_calculation",
+      "code_execution"
+    ],
+    "path": "data/training_data_fuzz/"
+  },
+  "test_metrics": {
+    "accuracy": 0.9677,
+    "precision_mac": 0.9833,
+    "recall_mac": 0.9747,
+    "f1_macro": 0.9788,
+    "f1_micro": 0.9841,
+    "f1_weighted": 0.9838,
+    "auroc_macro": 0.9953,
+    "prauc_macro": 0.9896,
+    "f1_cv_mean": 0.9815,
+    "f1_cv_std": 0.0016
+  },
+  "per_label_f1": {
+    "file_access": 0.9254,
+    "network_access": 0.9797,
+    "process_mgmt": 0.9983,
+    "pure_calculation": 0.9914,
+    "code_execution": 0.9994
+  },
+  "robustness": {
+    "clean": 0.9788,
+    "token_dropout_5pct": 0.9752,
+    "token_dropout_10pct": 0.9693,
+    "token_dropout_20pct": 0.9557,
+    "token_dropout_50pct": 0.9093,
+    "char_noise_5pct": 0.9497,
+    "char_noise_10pct": 0.9019,
+    "char_noise_20pct": 0.8296,
+    "truncation_75pct": 0.9284,
+    "truncation_50pct": 0.882,
+    "ood_empty_syscalls": 0.8573
+  },
+  "adversarial_fgsm": {
+    "0.0": 0.9788,
+    "0.01": 0.9751,
+    "0.05": 0.977,
+    "0.1": 0.9749,
+    "0.2": 0.9776
+  },
+  "calibration_ece": {
+    "file_access": 0.0465,
+    "network_access": 0.0044,
+    "process_mgmt": 0.0,
+    "pure_calculation": 0.0031,
+    "code_execution": 0.0007,
+    "macro_ece": 0.0109
+  },
+  "monitoring_psi_healthy": {
+    "file_access": 0.1797,
+    "network_access": 0.0017,
+    "process_mgmt": 0.0025,
+    "pure_calculation": 0.0113,
+    "code_execution": 0.0024
+  },
+  "cl_experiment": [
+    {
+      "step": "Step 0: Baseline",
+      "before_f1": 0.979,
+      "after_f1": 0.979,
+      "losses": []
+    },
+    {
+      "step": "Step 1: Network-heavy",
+      "before_f1": 0.9454,
+      "after_f1": 0.9415,
+      "losses": [
+        1.0172,
+        0.5904,
+        0.3998
+      ]
+    },
+    {
+      "step": "Step 2: Process-heavy",
+      "before_f1": 0.9162,
+      "after_f1": 0.9456,
+      "losses": [
+        1.1283,
+        0.556,
+        0.3425
+      ]
+    },
+    {
+      "step": "Step 3: File-heavy",
+      "before_f1": 0.9132,
+      "after_f1": 0.9318,
+      "losses": [
+        0.7261,
+        0.482,
+        0.339
+      ]
+    },
+    {
+      "step": "Step 4: Mixed rare",
+      "before_f1": 0.9759,
+      "after_f1": 0.9713,
+      "losses": [
+        0.1298,
+        0.1038,
+        0.1128
+      ]
+    }
+  ],
+  "active_learning": [
+    {
+      "cycle": 0,
+      "labeled_size": 9338,
+      "f1_macro": 0.9749,
+      "auroc": 0.994
+    },
+    {
+      "cycle": 1,
+      "labeled_size": 11338,
+      "f1_macro": 0.975,
+      "auroc": 0.9946
+    },
+    {
+      "cycle": 2,
+      "labeled_size": 13338,
+      "f1_macro": 0.9771,
+      "auroc": 0.9947
+    },
+    {
+      "cycle": 3,
+      "labeled_size": 15338,
+      "f1_macro": 0.977,
+      "auroc": 0.9947
+    },
+    {
+      "cycle": 4,
+      "labeled_size": 17338,
+      "f1_macro": 0.9773,
+      "auroc": 0.9945
+    },
+    {
+      "cycle": 5,
+      "labeled_size": 19338,
+      "f1_macro": 0.9753,
+      "auroc": 0.9944
+    }
+  ]
+}
