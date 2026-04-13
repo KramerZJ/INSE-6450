@@ -1,0 +1,123 @@
+{
+  "hardware": {
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Vega Mobile Gfx",
+    "ram_gb": 30.6,
+    "python": "3.11.15",
+    "torch": "2.5.1+rocm6.2",
+    "cuda_available": true,
+    "gpu_name": "AMD Radeon Graphics",
+    "gpu_vram_gb": 15.3,
+    "hip_version": "6.2.41133-dd7f95766"
+  },
+  "model_size": {
+    "total_params": 1119622,
+    "trainable_params": 1119622,
+    "param_size_mb": 4.27,
+    "checkpoint_size_mb": 12.87,
+    "training_epoch": 20,
+    "best_f1": 0.9673
+  },
+  "flops": {
+    "cnn_flops": "125,829,120",
+    "lstm_flops": "469,762,048",
+    "attention_flops": "33,685,504",
+    "classifier_flops": "66,816",
+    "total_flops": "629,343,488",
+    "total_gflops": 0.6293
+  },
+  "inference": {
+    "device": "cuda",
+    "single_sample_p50_ms": 31.23,
+    "single_sample_p90_ms": 46.2,
+    "single_sample_p95_ms": 58.17,
+    "single_sample_p99_ms": 66.59,
+    "batch64_avg_latency_ms": 99.92,
+    "throughput_samples_per_sec": 616.4,
+    "total_test_samples": 11373,
+    "total_inference_time_sec": 18.45,
+    "peak_inference_memory": "350.5 MB (GPU)"
+  },
+  "auc": {
+    "file_access": {
+      "auroc": 0.9972,
+      "pr_auc": 0.9924
+    },
+    "network_access": {
+      "auroc": 0.996,
+      "pr_auc": 0.9864
+    },
+    "process_mgmt": {
+      "auroc": 0.9962,
+      "pr_auc": 0.9758
+    },
+    "pure_calculation": {
+      "auroc": 0.9947,
+      "pr_auc": 0.9943
+    },
+    "code_execution": {
+      "auroc": 0.9971,
+      "pr_auc": 0.9958
+    },
+    "macro_auroc": 0.9962,
+    "macro_pr_auc": 0.9889
+  },
+  "baseline": {
+    "macro_f1": 0.86,
+    "exact_match": 0.7525,
+    "hamming_loss": 0.0661,
+    "per_label_f1": {
+      "file_access": 0.8889,
+      "network_access": 0.8634,
+      "process_mgmt": 0.7435,
+      "pure_calculation": 0.8936,
+      "code_execution": 0.9107
+    },
+    "train_time_sec": 7.6
+  },
+  "checkpoint": {
+    "epoch": 20,
+    "best_f1": 0.9673,
+    "results": {
+      "file_access": {
+        "precision": 0.9772,
+        "recall": 0.985,
+        "f1": 0.9811,
+        "accuracy": 0.9938,
+        "support": 1871
+      },
+      "network_access": {
+        "precision": 0.9472,
+        "recall": 0.9731,
+        "f1": 0.96,
+        "accuracy": 0.9846,
+        "support": 2159
+      },
+      "process_mgmt": {
+        "precision": 0.9335,
+        "recall": 0.9645,
+        "f1": 0.9487,
+        "accuracy": 0.992,
+        "support": 873
+      },
+      "pure_calculation": {
+        "precision": 0.9803,
+        "recall": 0.959,
+        "f1": 0.9695,
+        "accuracy": 0.9681,
+        "support": 6023
+      },
+      "code_execution": {
+        "precision": 0.9762,
+        "recall": 0.9779,
+        "f1": 0.977,
+        "accuracy": 0.9819,
+        "support": 4480
+      },
+      "macro_f1": 0.9673,
+      "exact_match": 0.941,
+      "hamming_loss": 0.0159
+    }
+  }
+}

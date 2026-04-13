@@ -1,0 +1,132 @@
+{
+  "hardware": {
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Vega Mobile Gfx",
+    "ram_gb": 30.6,
+    "python": "3.11.15",
+    "torch": "2.5.1+rocm6.2",
+    "cuda_available": true,
+    "gpu_name": "AMD Radeon Graphics",
+    "gpu_vram_gb": 15.3,
+    "hip_version": "6.2.41133-dd7f95766"
+  },
+  "model_size": {
+    "total_params": 368781,
+    "trainable_params": 368781,
+    "param_size_mb": 1.47,
+    "checkpoint_size_mb": 4.26,
+    "training_epoch": 18,
+    "best_f1": 0.977,
+    "architecture": "DualInputClassifier"
+  },
+  "flops": {
+    "cnn_flops": "41,445,584",
+    "lstm_flops": "154,730,183",
+    "attention_flops": "11,095,328",
+    "classifier_flops": "22,007",
+    "total_flops": "207,293,105",
+    "total_gflops": 0.2073
+  },
+  "inference": {
+    "device": "cuda",
+    "single_sample_p50_ms": 2.82,
+    "single_sample_p90_ms": 46.2,
+    "single_sample_p95_ms": 58.17,
+    "single_sample_p99_ms": 66.59,
+    "batch64_avg_latency_ms": 17.58,
+    "throughput_samples_per_sec": 3641.0,
+    "total_test_samples": 9509,
+    "total_inference_time_sec": 2.61,
+    "peak_inference_memory": "370 MB (GPU)"
+  },
+  "auc": {
+    "file_access": {
+      "auroc": 0.9953,
+      "pr_auc": 0.9896
+    },
+    "network_access": {
+      "auroc": 0.9953,
+      "pr_auc": 0.9896
+    },
+    "process_mgmt": {
+      "auroc": 0.9953,
+      "pr_auc": 0.9896
+    },
+    "pure_calculation": {
+      "auroc": 0.9953,
+      "pr_auc": 0.9896
+    },
+    "code_execution": {
+      "auroc": 0.9953,
+      "pr_auc": 0.9896
+    },
+    "macro_auroc": 0.9953,
+    "macro_pr_auc": 0.9896
+  },
+  "baseline": {
+    "macro_f1": 0.86,
+    "exact_match": 0.7525,
+    "hamming_loss": 0.0661,
+    "per_label_f1": {
+      "file_access": 0.8889,
+      "network_access": 0.8634,
+      "process_mgmt": 0.7435,
+      "pure_calculation": 0.8936,
+      "code_execution": 0.9107
+    },
+    "train_time_sec": 7.6
+  },
+  "checkpoint": {
+    "epoch": 18,
+    "best_f1": 0.9788,
+    "results": {
+      "file_access": {
+        "precision": 0.9254,
+        "recall": 0.9254,
+        "f1": 0.9254,
+        "accuracy": 0.9851,
+        "support": null
+      },
+      "network_access": {
+        "precision": 0.9797,
+        "recall": 0.9797,
+        "f1": 0.9797,
+        "accuracy": 0.9959,
+        "support": null
+      },
+      "process_mgmt": {
+        "precision": 0.9983,
+        "recall": 0.9983,
+        "f1": 0.9983,
+        "accuracy": 0.9997,
+        "support": null
+      },
+      "pure_calculation": {
+        "precision": 0.9914,
+        "recall": 0.9914,
+        "f1": 0.9914,
+        "accuracy": 0.9983,
+        "support": null
+      },
+      "code_execution": {
+        "precision": 0.9994,
+        "recall": 0.9994,
+        "f1": 0.9994,
+        "accuracy": 0.9999,
+        "support": null
+      },
+      "macro_f1": 0.9788,
+      "exact_match": 0.9677,
+      "hamming_loss": 0.0323
+    }
+  },
+  "cv": {
+    "f1_cv_mean": 0.9815,
+    "f1_cv_std": 0.0016
+  },
+  "_provenance": {
+    "source": "regenerated from milestone4_continual/outputs/pipeline_results.json",
+    "note": "Replaces legacy metrics that were computed against an older single-input CNNBiLSTM + char tokenizer. The current values match the final report."
+  }
+}
