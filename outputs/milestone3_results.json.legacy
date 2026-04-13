@@ -1,0 +1,670 @@
+{
+  "stress_tests": {
+    "clean": {
+      "macro_f1": 0.9634,
+      "exact_match": 0.9324,
+      "hamming_loss": 0.0179
+    },
+    "token_dropout_0.05": {
+      "macro_f1": 0.9405,
+      "exact_match": 0.8962,
+      "hamming_loss": 0.0287
+    },
+    "token_dropout_0.1": {
+      "macro_f1": 0.9048,
+      "exact_match": 0.8391,
+      "hamming_loss": 0.0447
+    },
+    "token_dropout_0.2": {
+      "macro_f1": 0.8183,
+      "exact_match": 0.72,
+      "hamming_loss": 0.0805
+    },
+    "token_dropout_0.3": {
+      "macro_f1": 0.7084,
+      "exact_match": 0.5929,
+      "hamming_loss": 0.1223
+    },
+    "token_dropout_0.5": {
+      "macro_f1": 0.4815,
+      "exact_match": 0.3648,
+      "hamming_loss": 0.2133
+    },
+    "char_noise_0.05": {
+      "macro_f1": 0.9229,
+      "exact_match": 0.8661,
+      "hamming_loss": 0.0364
+    },
+    "char_noise_0.1": {
+      "macro_f1": 0.8743,
+      "exact_match": 0.7935,
+      "hamming_loss": 0.0579
+    },
+    "char_noise_0.2": {
+      "macro_f1": 0.7518,
+      "exact_match": 0.6421,
+      "hamming_loss": 0.1061
+    },
+    "char_noise_0.3": {
+      "macro_f1": 0.6083,
+      "exact_match": 0.4913,
+      "hamming_loss": 0.161
+    },
+    "truncate_0.75": {
+      "macro_f1": 0.9285,
+      "exact_match": 0.8826,
+      "hamming_loss": 0.0335
+    },
+    "truncate_0.5": {
+      "macro_f1": 0.7982,
+      "exact_match": 0.7228,
+      "hamming_loss": 0.0921
+    },
+    "truncate_0.25": {
+      "macro_f1": 0.274,
+      "exact_match": 0.1787,
+      "hamming_loss": 0.26
+    },
+    "ood_random": {
+      "macro_f1": 0.258,
+      "exact_match": 0.1726,
+      "avg_max_confidence": 0.9229,
+      "avg_confidence_all": 0.2464
+    },
+    "ood_english_text": {
+      "avg_max_confidence": 0.9031,
+      "avg_confidence_all": 0.2496,
+      "frac_any_label_above_0.5": 0.938
+    }
+  },
+  "adversarial": {
+    "fgsm_eps_0.01": {
+      "macro_f1": 0.9444,
+      "exact_match": 0.8961,
+      "per_label_f1": {
+        "file_access": 0.964,
+        "network_access": 0.9318,
+        "process_mgmt": 0.926,
+        "pure_calculation": 0.9509,
+        "code_execution": 0.9495
+      }
+    },
+    "fgsm_eps_0.05": {
+      "macro_f1": 0.8657,
+      "exact_match": 0.7667,
+      "per_label_f1": {
+        "file_access": 0.9147,
+        "network_access": 0.831,
+        "process_mgmt": 0.8255,
+        "pure_calculation": 0.8776,
+        "code_execution": 0.8796
+      }
+    },
+    "fgsm_eps_0.1": {
+      "macro_f1": 0.79,
+      "exact_match": 0.6529,
+      "per_label_f1": {
+        "file_access": 0.8711,
+        "network_access": 0.7319,
+        "process_mgmt": 0.7189,
+        "pure_calculation": 0.8134,
+        "code_execution": 0.8147
+      }
+    },
+    "fgsm_eps_0.2": {
+      "macro_f1": 0.669,
+      "exact_match": 0.5034,
+      "per_label_f1": {
+        "file_access": 0.759,
+        "network_access": 0.5953,
+        "process_mgmt": 0.5462,
+        "pure_calculation": 0.7332,
+        "code_execution": 0.7112
+      }
+    },
+    "fgsm_eps_0.5": {
+      "macro_f1": 0.4571,
+      "exact_match": 0.3047,
+      "per_label_f1": {
+        "file_access": 0.4938,
+        "network_access": 0.3498,
+        "process_mgmt": 0.2924,
+        "pure_calculation": 0.6158,
+        "code_execution": 0.5339
+      }
+    },
+    "char_sub_3": {
+      "macro_f1": 0.9526,
+      "exact_match": 0.9164
+    },
+    "char_sub_5": {
+      "macro_f1": 0.9497,
+      "exact_match": 0.9104
+    },
+    "char_sub_10": {
+      "macro_f1": 0.9295,
+      "exact_match": 0.8765
+    },
+    "char_sub_20": {
+      "macro_f1": 0.8844,
+      "exact_match": 0.8094
+    },
+    "char_sub_50": {
+      "macro_f1": 0.7154,
+      "exact_match": 0.6009
+    }
+  },
+  "calibration": {
+    "file_access": {
+      "bin_accuracies": [
+        0.0025,
+        0.2353,
+        0.4,
+        0.625,
+        0.4286,
+        0.4286,
+        0.6667,
+        0.9091,
+        0.55,
+        0.9788
+      ],
+      "bin_confidences": [
+        0.0004,
+        0.1397,
+        0.2534,
+        0.3548,
+        0.4708,
+        0.5592,
+        0.6349,
+        0.7671,
+        0.861,
+        0.997
+      ],
+      "bin_counts": [
+        9450,
+        17,
+        5,
+        8,
+        7,
+        7,
+        6,
+        11,
+        20,
+        1745
+      ],
+      "ece": 0.0057
+    },
+    "network_access": {
+      "bin_accuracies": [
+        0.0064,
+        0.375,
+        0.3636,
+        0.25,
+        0.75,
+        0.8125,
+        0.56,
+        0.5909,
+        0.7692,
+        0.9785
+      ],
+      "bin_confidences": [
+        0.001,
+        0.1392,
+        0.2568,
+        0.3516,
+        0.4596,
+        0.5457,
+        0.6583,
+        0.7515,
+        0.8576,
+        0.9931
+      ],
+      "bin_counts": [
+        9133,
+        32,
+        22,
+        20,
+        12,
+        16,
+        25,
+        44,
+        65,
+        2003
+      ],
+      "ece": 0.01
+    },
+    "process_mgmt": {
+      "bin_accuracies": [
+        0.0023,
+        0.4118,
+        0.5,
+        0.1667,
+        0.4,
+        0.1667,
+        0.6667,
+        0.6667,
+        0.6429,
+        0.9544
+      ],
+      "bin_confidences": [
+        0.0004,
+        0.1469,
+        0.233,
+        0.3713,
+        0.4385,
+        0.5565,
+        0.65,
+        0.7513,
+        0.8577,
+        0.9958
+      ],
+      "bin_counts": [
+        10403,
+        17,
+        8,
+        6,
+        5,
+        6,
+        6,
+        9,
+        14,
+        899
+      ],
+      "ece": 0.0063
+    },
+    "pure_calculation": {
+      "bin_accuracies": [
+        0.0161,
+        0.2025,
+        0.3333,
+        0.3205,
+        0.4182,
+        0.58,
+        0.5962,
+        0.5246,
+        0.7938,
+        0.9834
+      ],
+      "bin_confidences": [
+        0.0083,
+        0.1433,
+        0.2421,
+        0.3459,
+        0.4485,
+        0.5474,
+        0.6532,
+        0.7545,
+        0.8588,
+        0.997
+      ],
+      "bin_counts": [
+        5046,
+        158,
+        81,
+        78,
+        55,
+        50,
+        52,
+        61,
+        97,
+        5654
+      ],
+      "ece": 0.0142
+    },
+    "code_execution": {
+      "bin_accuracies": [
+        0.0132,
+        0.3971,
+        0.6176,
+        0.6053,
+        0.6765,
+        0.6486,
+        0.8049,
+        0.7833,
+        0.8421,
+        0.99
+      ],
+      "bin_confidences": [
+        0.0013,
+        0.1477,
+        0.2576,
+        0.3527,
+        0.4523,
+        0.5497,
+        0.6456,
+        0.7527,
+        0.8548,
+        0.9937
+      ],
+      "bin_counts": [
+        6745,
+        68,
+        34,
+        38,
+        34,
+        37,
+        41,
+        60,
+        114,
+        4200
+      ],
+      "ece": 0.0137
+    },
+    "confidence_histogram": {
+      "mean_max_conf": 0.9878,
+      "std_max_conf": 0.0634,
+      "frac_above_0.9": 0.9707,
+      "frac_above_0.95": 0.9581,
+      "frac_below_0.5": 0.006
+    },
+    "macro_ece": 0.01
+  },
+  "failures": {
+    "total_failures": 773,
+    "total_samples": 11373,
+    "top_failures": [
+      {
+        "index": 752,
+        "api_path": "torch._inductor.codecache.WritableTempFile",
+        "text_snippet": "            expected = ref_model(*ref_inputs)\n\n            torch.manual_seed(0)\n            with WritableTempFile(suffix",
+        "predicted": [
+          "file_access",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 0.999,
+          "network_access": 0.001,
+          "process_mgmt": 0.001,
+          "pure_calculation": 1.0,
+          "code_execution": 0.0
+        },
+        "max_confidence": 1.0,
+        "severity": 3.0
+      },
+      {
+        "index": 4528,
+        "api_path": "jax._src.lib.mlir.dialects.memref.load",
+        "text_snippet": "  with utils.when(ctx.single_warp_per_block_predicate):\n    tcgen05.tmem_alloc(op.smem_ptr, ncols, bool(op.collective), ",
+        "predicted": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "expected": [
+          "file_access"
+        ],
+        "probabilities": {
+          "file_access": 0.001,
+          "network_access": 0.0,
+          "process_mgmt": 1.0,
+          "pure_calculation": 1.0,
+          "code_execution": 0.0
+        },
+        "max_confidence": 1.0,
+        "severity": 2.999
+      },
+      {
+        "index": 8560,
+        "api_path": "tensorflow.python.framework.test_util.disable_control_flow_v2",
+        "text_snippet": "    xla_context.Exit()\n\n\n  @test_util.disable_control_flow_v2(\"b/115776323 (max_iters)\")\n  @test_util.run_v1_only(\"b/120",
+        "predicted": [
+          "code_execution"
+        ],
+        "expected": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.0,
+          "pure_calculation": 0.002,
+          "code_execution": 0.999
+        },
+        "max_confidence": 0.999,
+        "severity": 2.998
+      },
+      {
+        "index": 6716,
+        "api_path": "torch.fx.passes.graph_transform_observer.GraphTransformObserver",
+        "text_snippet": "\n        log_url = tempfile.mkdtemp()\n\n        with GraphTransformObserver(\n            traced, \"replace_neg_with_relu\",",
+        "predicted": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "expected": [
+          "network_access"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.996,
+          "pure_calculation": 0.998,
+          "code_execution": 0.0
+        },
+        "max_confidence": 0.998,
+        "severity": 2.995
+      },
+      {
+        "index": 9587,
+        "api_path": "tensorflow.python.ops.control_flow_case.case",
+        "text_snippet": "    x = constant_op.constant(2)\n    conditions = [(math_ops.equal(x, 1), lambda: constant_op.constant(2)),\n             ",
+        "predicted": [
+          "network_access",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.997,
+          "process_mgmt": 0.0,
+          "pure_calculation": 0.999,
+          "code_execution": 0.0
+        },
+        "max_confidence": 0.999,
+        "severity": 2.995
+      },
+      {
+        "index": 1277,
+        "api_path": "tensorflow.python.eager.context.executing_eagerly",
+        "text_snippet": "def init_var_from_numpy(input_var, numpy_input, session):\n  \"\"\"Initialize `input_var` to `numpy_input` using `session` i",
+        "predicted": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.999,
+          "pure_calculation": 0.988,
+          "code_execution": 0.0
+        },
+        "max_confidence": 0.999,
+        "severity": 2.987
+      },
+      {
+        "index": 9135,
+        "api_path": "torch.jit.script",
+        "text_snippet": "            def get_all_bundled_inputs(self):\n                pass\n\n        bi_module = torch.jit.script(MyBundledInputM",
+        "predicted": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.998,
+          "pure_calculation": 0.989,
+          "code_execution": 0.003
+        },
+        "max_confidence": 0.998,
+        "severity": 2.984
+      },
+      {
+        "index": 3542,
+        "api_path": "torch.nn.attention.flex_attention.create_block_mask",
+        "text_snippet": "            sliding_window, val=torch.randn((), device=device)\n        )\n        opt_fn = torch.compile(create_block_mas",
+        "predicted": [
+          "code_execution"
+        ],
+        "expected": [
+          "process_mgmt",
+          "pure_calculation"
+        ],
+        "probabilities": {
+          "file_access": 0.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.014,
+          "pure_calculation": 0.006,
+          "code_execution": 0.992
+        },
+        "max_confidence": 0.992,
+        "severity": 2.972
+      },
+      {
+        "index": 6373,
+        "api_path": "torch._inductor.codecache.WritableTempFile",
+        "text_snippet": "                \"aot_inductor.metadata\": metadata,\n            }\n\n            with WritableTempFile(suffix=\".pt2\") as f:",
+        "predicted": [
+          "file_access",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 0.966,
+          "network_access": 0.001,
+          "process_mgmt": 0.0,
+          "pure_calculation": 0.989,
+          "code_execution": 0.001
+        },
+        "max_confidence": 0.989,
+        "severity": 2.955
+      },
+      {
+        "index": 1803,
+        "api_path": "tensorflow.compiler.mlir.lite.python._pywrap_converter_api.FlatBufferToMlir",
+        "text_snippet": "\ndef wrapped_flat_buffer_file_to_mlir(model, input_is_filepath):\n  \"\"\"Wraps FlatBufferFileToMlir with lazy loader.\"\"\"\n  ",
+        "predicted": [
+          "file_access",
+          "pure_calculation"
+        ],
+        "expected": [
+          "code_execution"
+        ],
+        "probabilities": {
+          "file_access": 1.0,
+          "network_access": 0.0,
+          "process_mgmt": 0.0,
+          "pure_calculation": 0.953,
+          "code_execution": 0.0
+        },
+        "max_confidence": 1.0,
+        "severity": 2.953
+      }
+    ]
+  },
+  "latency_comparison": {
+    "clean": {
+      "batch64_p50_ms": 104.16,
+      "batch64_p90_ms": 105.39,
+      "throughput_samples_sec": 620.1
+    },
+    "token_dropout_0.2": {
+      "batch64_p50_ms": 105.12,
+      "batch64_p90_ms": 106.85,
+      "throughput_samples_sec": 614.5
+    },
+    "char_noise_0.2": {
+      "batch64_p50_ms": 105.67,
+      "batch64_p90_ms": 107.39,
+      "throughput_samples_sec": 610.6
+    }
+  },
+  "drift_adaptation": {
+    "before_adaptation": {
+      "dataset_size": 4444,
+      "macro_f1": 0.9442,
+      "exact_match": 0.8504,
+      "per_label_f1": {
+        "file_access": 0.9621,
+        "network_access": 0.8738,
+        "process_mgmt": 0.9516,
+        "pure_calculation": 0.977,
+        "code_execution": 0.9565
+      }
+    },
+    "after_adaptation": {
+      "macro_f1": 0.9632,
+      "exact_match": 0.9048,
+      "per_label_f1": {
+        "file_access": 0.9718,
+        "network_access": 0.9486,
+        "process_mgmt": 0.9621,
+        "pure_calculation": 0.9726,
+        "code_execution": 0.9612
+      },
+      "adaptation_time_sec": 25.2,
+      "adaptation_samples": 5000,
+      "adaptation_epochs": 3
+    },
+    "adapted_on_original": {
+      "macro_f1": 0.955,
+      "exact_match": 0.9019
+    },
+    "model_comparison": {
+      "original_params": 1119622,
+      "adapted_params": 1119622,
+      "params_changed": "classifier head only (same total params)"
+    }
+  },
+  "monitoring": {
+    "psi_per_label": {
+      "file_access": 0.004165,
+      "network_access": 0.000795,
+      "process_mgmt": 0.004365,
+      "pure_calculation": 0.001682,
+      "code_execution": 0.003198
+    },
+    "reference_metrics": {
+      "macro_f1": 0.9634,
+      "exact_match": 0.9304
+    },
+    "current_metrics": {
+      "macro_f1": 0.9628,
+      "exact_match": 0.9318
+    },
+    "label_rates": {
+      "reference": {
+        "file_access": 0.1692,
+        "network_access": 0.1898,
+        "process_mgmt": 0.0791,
+        "pure_calculation": 0.52,
+        "code_execution": 0.4057
+      },
+      "current": {
+        "file_access": 0.1598,
+        "network_access": 0.1894,
+        "process_mgmt": 0.0819,
+        "pure_calculation": 0.5275,
+        "code_execution": 0.3932
+      }
+    },
+    "confidence_drift": {
+      "reference_mean_max_conf": 0.988,
+      "current_mean_max_conf": 0.9878,
+      "drift": -0.0001
+    }
+  }
+}

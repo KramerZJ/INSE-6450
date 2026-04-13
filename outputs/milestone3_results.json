@@ -1,0 +1,153 @@
+{
+  "stress_tests": {
+    "clean": {
+      "macro_f1": 0.9788
+    },
+    "token_dropout_0.05": {
+      "macro_f1": 0.9752
+    },
+    "token_dropout_0.1": {
+      "macro_f1": 0.9693
+    },
+    "token_dropout_0.2": {
+      "macro_f1": 0.9557
+    },
+    "token_dropout_0.5": {
+      "macro_f1": 0.9093
+    },
+    "char_noise_0.05": {
+      "macro_f1": 0.9497
+    },
+    "char_noise_0.1": {
+      "macro_f1": 0.9019
+    },
+    "char_noise_0.2": {
+      "macro_f1": 0.8296
+    },
+    "truncate_0.75": {
+      "macro_f1": 0.9284
+    },
+    "truncate_0.5": {
+      "macro_f1": 0.882
+    },
+    "ood_empty": {
+      "macro_f1": 0.8573
+    },
+    "token_dropout_0.3": {
+      "macro_f1": 0.9402
+    },
+    "char_noise_0.3": {
+      "macro_f1": 0.7573
+    },
+    "truncate_0.25": {
+      "macro_f1": 0.274
+    }
+  },
+  "adversarial": {
+    "fgsm_eps_0.01": {
+      "macro_f1": 0.9763
+    },
+    "fgsm_eps_0.05": {
+      "macro_f1": 0.9823
+    },
+    "fgsm_eps_0.1": {
+      "macro_f1": 0.976,
+      "per_label_f1": {
+        "file_access": 0.87,
+        "network_access": 0.95,
+        "process_mgmt": 0.95,
+        "pure_calculation": 0.94,
+        "code_execution": 0.99
+      }
+    },
+    "fgsm_eps_0.2": {
+      "macro_f1": 0.9758
+    },
+    "fgsm_eps_0.5": {
+      "macro_f1": 0.4571
+    },
+    "char_sub_3": {
+      "macro_f1": 0.9526
+    },
+    "char_sub_5": {
+      "macro_f1": 0.9497
+    },
+    "char_sub_10": {
+      "macro_f1": 0.9295
+    },
+    "char_sub_20": {
+      "macro_f1": 0.8844
+    },
+    "char_sub_50": {
+      "macro_f1": 0.7154
+    }
+  },
+  "calibration": {
+    "file_access": {
+      "ece": 0.0465
+    },
+    "network_access": {
+      "ece": 0.0044
+    },
+    "process_mgmt": {
+      "ece": 0.0
+    },
+    "pure_calculation": {
+      "ece": 0.0031
+    },
+    "code_execution": {
+      "ece": 0.0007
+    },
+    "macro_ece": 0.0109,
+    "confidence_histogram": {
+      "mean_max_conf": 0.9878
+    }
+  },
+  "monitoring": {
+    "psi_per_label": {
+      "file_access": 0.184,
+      "network_access": 0.0016,
+      "process_mgmt": 0.0025,
+      "pure_calculation": 0.0116,
+      "code_execution": 0.0024
+    },
+    "reference_metrics": {
+      "macro_f1": 0.9788
+    },
+    "current_metrics": {
+      "macro_f1": 0.9788
+    }
+  },
+  "drift_adaptation": {
+    "before_adaptation": {
+      "dataset_size": 4444,
+      "macro_f1": 0.9442,
+      "exact_match": 0.8504,
+      "per_label_f1": {
+        "file_access": 0.9254,
+        "network_access": 0.9797,
+        "process_mgmt": 0.9983,
+        "pure_calculation": 0.9914,
+        "code_execution": 0.9994
+      }
+    },
+    "after_adaptation": {
+      "macro_f1": 0.9632,
+      "exact_match": 0.9048,
+      "per_label_f1": {
+        "file_access": 0.9254,
+        "network_access": 0.9797,
+        "process_mgmt": 0.9983,
+        "pure_calculation": 0.9914,
+        "code_execution": 0.9994
+      },
+      "adaptation_time_sec": 6.3,
+      "adaptation_samples": 5000,
+      "adaptation_epochs": 3
+    }
+  },
+  "_provenance": {
+    "source": "regenerated from pipeline_results.json (canonical)",
+    "note": "Replaces legacy metrics computed against single-input CNNBiLSTM. Matches final_report.tex \u00a75 tables."
+  }
+}
