@@ -1,0 +1,9 @@
+label,count,pct_of_total
+file_access,14861,11.39
+network_access,21795,16.7
+process_mgmt,5387,4.13
+pure_calculation,97012,74.35
+code_execution,16990,13.02
+TOTAL_RECORDS,130480,
+flagged,56412,43.23
+uncertain,10981,8.42
